@@ -17,7 +17,16 @@ public class CountryEntity {
     private Long id;
 
     @Column
-    private String name;
+    private String name;    
+
+    public CountryEntity(){
+        
+    }
+
+    public CountryEntity(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public Long getId() {
         return id;
