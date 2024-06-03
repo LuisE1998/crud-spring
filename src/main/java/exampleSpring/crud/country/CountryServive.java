@@ -20,6 +20,10 @@ public class CountryServive {
         return countryRepository.findById(id);
     }
 
+    public Optional<CountryEntity> getCountryByName(String name){
+        return countryRepository.findByName(name);
+    }
+
     public CountryEntity saveCountry(CountryEntity country){
         return countryRepository.save(country);
     }
@@ -31,12 +35,7 @@ public class CountryServive {
         return country;
     }
 
-    public boolean deleteCountry(Long id){
-        try {
-            countryRepository.deleteById(id);
-            return true;
-        }catch(Exception e) {
-            return false;
-        }        
+    public void deleteCountry(Long id){
+        countryRepository.deleteById(id);
     }
 }
